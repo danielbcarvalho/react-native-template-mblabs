@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { APP_VERSION } from '../../../../env.json';
+import ENV from 'react-native-config';
 
 import { Button, Row, Background, Input, Col, Text } from '@mobile/components';
 import Toaster from '@mobile/services/toaster';
@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   const [form, onChange, clear] = useForm({ name: '', email: '' });
 
   return (
-    <Background barStyle="dark-content">
+    <Background barStyle="dark-content"> 
       <Col>
         <Button
           title="Press Me!! Error"
@@ -25,19 +25,20 @@ const Login: React.FC = () => {
           onChangeText={(value: string) => onChange('name', value)}
         />
         <Input
-          title="teste codepush"
+          title="Insira sua senha"
           value={form.name}
           onChangeText={(value: string) => onChange('name', value)}
         />
       </Col>
       <Col>
         <Text
-          text={`Versão: ${APP_VERSION}`}
+          text={`Versão: ${ENV.APP_VERSION}`}
         />
       </Col>
 
     </Background>
-  );
-};
+  ); 
+}; 
 
 export default Login;
+ 
