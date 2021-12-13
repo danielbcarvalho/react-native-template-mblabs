@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   const [form, onChange, clear] = useForm({ name: '', email: '' });
 
   return (
-    <Background barStyle="dark-content"> 
+    <Background barStyle="dark-content">
       <Col>
         <Button
           title="Press Me!! Error"
@@ -34,11 +34,13 @@ const Login: React.FC = () => {
         <Text
           text={`Versão: ${ENV.APP_VERSION}`}
         />
+        <Text
+          text={`API: ${ENV.API}`}
+        />
       </Col>
 
     </Background>
-  ); 
-}; 
+  );
+};
 
 export default Login;
- 
